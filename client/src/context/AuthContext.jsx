@@ -3,6 +3,7 @@ import {baseUrl, postRequest} from "../utils/services.js";
 
 export const AuthContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const AuthContextProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [registerError, setRegisterError] = useState(null);

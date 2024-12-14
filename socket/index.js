@@ -21,7 +21,7 @@ socket .on("addNewUser", (userId) => {
 });
 
     // add message
-    socket.on|("sendMessage", (message) => {
+    socket.on("sendMessage", (message) => {
     const user = onlineUsers.find(
         (user) => user.userId === message.recipientId
         );

@@ -9,11 +9,13 @@ import InputEmoji from "react-input-emoji";
 const ChatBox = () => {
     const {user } = useContext(AuthContext) ;
     const { currentChat, messages, isMessagesLoading , sendTextMessage } = useContext(ChatContext);
+    console.log(currentChat,'ddddddddddddddddddd');
+    console.log(user,'ddddddddddddddddddd');
     const { recipientUser } = useFetchRecipientUser(currentChat, user);
     const [textMessage , setTextMessage] = useState("");
 
     console.log('text',textMessage);
-
+    console.log(recipientUser);
     if (!recipientUser)
         return (
             <p style={{ textAlign: "center", width: "100%"}} >
@@ -21,17 +23,13 @@ const ChatBox = () => {
             </p>
         );
 
-    if(!isMessagesLoading)
-        return (
-            <p style={{ textAlign: "center", width: "100%"}} >Loading Chat...</p>
-        );
 
     return (
         <Stack gap={4} className="chat-box">
-            <div cLassName= "chat-header">
-                <strong>(recipientUser?.name)</strong>
+            <div className= "chat-header">
+                <strong>{recipientUser?.name}</strong>
             </div>
-            <Stack gap={3} classname="messages">
+            <Stack gap={3} className="messages">
                 {messages && 
                 messages.map((message, index)=> 
                 <Stack key={index} className={`${

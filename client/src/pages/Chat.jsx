@@ -5,12 +5,11 @@ import { ChatContext } from "../context/ChatContext";
 import UserChat from "../components/chat/UserChat";
 import PotentialChats from "../components/chat/PotentialChats";
 import { AuthContext } from "../context/AuthContext";
-
+import Stack from "react-bootstrap/Stack";
 
 const Chat = () => {
     const { user } = useContext(AuthContext);
-    const { userChats, isUserChatsLoading, updateCurrentChat} = 
-    useContext(ChatContext);
+    const { userChats, isUserChatsLoading, updateCurrentChat} = useContext(ChatContext);
 
     console.log('UserChats', userChats);
 

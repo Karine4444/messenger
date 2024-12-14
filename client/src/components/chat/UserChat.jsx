@@ -1,6 +1,6 @@
 import { Stack } from "react-bootstrap";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipient";
-import avarter from "../../assets/avarter.svg";
+import avatar from "../../assets/avatar.svg";
 import { useContext } from "react";
 import { ChatContext } from "../../context/ChatContext";
 
@@ -19,7 +19,7 @@ const UserChat = ({ chat, user }) => {
         >
             <div className="d-flex">
                 <div className="me-2">
-                    <img src={avarter} height="35px" alt="User Avatar" />
+                    <img src={avatar} height="35px" alt="User Avatar" />
                 </div>
                 <div className="text-content">
                     <div className="name">{recipientUser?.name}</div>
@@ -27,8 +27,8 @@ const UserChat = ({ chat, user }) => {
                 </div>
             </div>
             <div className="d-flex flex-column align-items-end">
-                <div className="date">12/12/2024</div>
-                <div className="this-user-notifications">2</div>
+                {/*<div className="date">12/12/2024</div>*/}
+                {/*<div className="this-user-notifications"></div>*/}
                 <span className={isOnline ? "user-online" : ""}></span>
             </div>
         </Stack>
